@@ -16,8 +16,7 @@ function ItemComp(props) {
   const popup = () => {
     setUrl(`http://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04`);
     Swal.fire({
-      title: arr.Title,
-      text: arr.Year,
+      title: arr.Title + " " + arr.Year,
       text: arr.Plot,
       imageUrl: arr.Poster,
       imageWidth: 300,
