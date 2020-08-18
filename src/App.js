@@ -1,12 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import AtlasApp from "./atlas_project/AtlasApp";
-
+import MovieApp from "./movie_project_comp/MovieApp";
 function App() {
   return (
     <div className="App">
-      <AtlasApp />
+      <MovieApp />
     </div>
   );
 }
