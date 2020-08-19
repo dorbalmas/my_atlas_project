@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 function InputMidAndCenter(props) {
-  let myInput = useRef("s");
+  let myInput = useRef(null);
   let [position, setposition] = useState(
     "form-control  border rounded-pill w-50"
   );
