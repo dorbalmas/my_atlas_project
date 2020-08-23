@@ -21,6 +21,7 @@ function InputMidAndCenter(props) {
         <div className="row align-items-center justify-content-center ">
           <header className={hideHeader}>MY MOVIE</header>
           <input
+            autoFocus
             onKeyUp={search2}
             type="search"
             ref={myInput}
