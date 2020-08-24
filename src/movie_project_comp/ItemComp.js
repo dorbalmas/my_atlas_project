@@ -7,14 +7,14 @@ function ItemComp(props) {
   let [arr, setArr] = useState([]);
   let [url, setUrl] = useState(null);
   useEffect(() => {
-    url = `http://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04`;
+    url = `https://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04`;
     getApi(url).then((data) => {
       setArr(data);
     });
   }, [url]);
 
   const popup = () => {
-    setUrl(`http://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04`);
+    setUrl(`https://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04`);
     Swal.fire({
       title: arr.Title + " " + arr.Year,
       text: arr.Plot,
@@ -25,7 +25,7 @@ function ItemComp(props) {
       confirmButtonText: "More info",
     }).then((result) => {
       if (result.value) {
-        url = `http://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04&plot=full`;
+        url = `https://www.omdbapi.com/?i=${item.imdbID}&apikey=e04a6b04&plot=full`;
         getApi(url).then((data2) => {
           console.log(data2);
           Swal.fire({ text: data2.Plot });
