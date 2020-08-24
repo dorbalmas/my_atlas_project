@@ -19,7 +19,7 @@ function MovieApp(props) {
     const timer = setTimeout(() => {
       setLoading(false);
       setUrl(
-        `http://www.omdbapi.com/?3896198&apikey=e04a6b04&s=${_inputSearch}`
+        `https://www.omdbapi.com/?3896198&apikey=e04a6b04&s=${_inputSearch}`
       );
     }, 1000);
     return () => clearTimeout(timer);
