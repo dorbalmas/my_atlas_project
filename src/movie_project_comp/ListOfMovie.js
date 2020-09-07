@@ -8,8 +8,15 @@ function ListOfMovie(props) {
         <div className="row align-items-center justify-content-center">
           {props.movieArr ? (
             !props.loading ? (
-              props.movieArr.map((item) => {
-                return <ItemComp item={item} key={item.imdbID} />;
+              props.movieArr.map((item, index) => {
+                return (
+                  <ItemComp
+                    item={item}
+                    index={index}
+                    movieArr={props.movieArr}
+                    key={item.imdbID}
+                  />
+                );
               })
             ) : (
               <ReactbootStrap.Spinner animation="border" />
