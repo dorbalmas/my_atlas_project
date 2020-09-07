@@ -5,11 +5,11 @@ import Swal from "sweetalert2";
 function ItemComp(props) {
   let item = props.item;
   let movieArr = props.movieArr;
+  let index = props.index;
   let i = 1;
-
   const popup = (_item) => {
-    console.log(_item);
-    getApi(`https://www.omdbapi.com/?i=${_item}&apikey=e04a6b04`).then(
+    if (movieArr[index].imdbID == _item.imdbID) i = 1;
+    getApi(`https://www.omdbapi.com/?i=${_item.imdbID}&apikey=e04a6b04`).then(
       (data1) => {
         Swal.fire({
           title: data1.Title + " " + data1.Year,
@@ -23,7 +23,7 @@ function ItemComp(props) {
           confirmButtonText: "next movie",
         }).then((result) => {
           if (result.value) {
-            let movie = movieArr[props.index + i].imdbID;
+            let movie = movieArr[index + i];
             i++;
             popup(movie);
           }
@@ -33,7 +33,7 @@ function ItemComp(props) {
   };
   return (
     <a
-      onClick={() => popup(item.imdbID)}
+      onClick={() => popup(item)}
       className="col-lg-6 border rounded mediaQ"
       style={{ minHeight: "200px" }}
     >
